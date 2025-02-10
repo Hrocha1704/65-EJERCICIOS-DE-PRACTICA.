@@ -1911,81 +1911,81 @@ menor tiempo
 
 """
 
-productos = {"combo 1": 1500, "combo 2" : 1650, "hamburguesa sola": 1300, "hamburguesa con queso" : 1400, "gaseosa" : 700, "postre": 600, "aderezo" : 100}
-lista_pedido = []
-lista_productos = []
-productos_vendidos = []
-
-ok = True
-
-
-
-
-while ok:
-   
-
-    pedido = int(input("""Eliga una de las siguientes opciones!:
-1) Combo 1: Hamburguesa, papas fritas y gaseosa - 1550
-2) Combo 2: Hamburguesa con queso, papas fritas y gaseosa - 1650
-9) Terminar
-3) Armar su propio combo: """))
-    
-    if pedido not in [1,2,3,4,5,6,7,8,9]:
-        print("Numero de pedido invalido, por favor intente nuevamente")
-        continue
-    
-
-    if pedido == 1:
-        lista_pedido.append(productos["combo 1"])
-        print(f"El subtotal hasta ahora es ${sum(lista_pedido)}")
-        
-    elif pedido == 2:
-        lista_pedido.append(productos["combo 2"])
-        print(f"El subtotal hasta ahora es ${sum(lista_pedido)}")
-
-
-    elif pedido == 9:
-        ok = False
-
-    else:
-        print("Usted ha decididor armar su propio combo")
-        propio_combo = int(input("""
-4) Hamburguesa sola - 1300
-5) Hamburguesa con queso - 1400
-6) Gaseosa - 700
-7) Postre - 600
-8) Agregar aderezo - 100
-9) Terminar: """))
-        cantidad = int(input("Ingrese la cantidad que desee: "))
-
-        if propio_combo == 4:
-            resultado = productos["hamburguesa sola"] * cantidad
-            lista_pedido.append(resultado)
-            print(f"El subtotal hasta ahora es ${sum(lista_pedido)}")
-        elif propio_combo == 5:
-            resultado = productos["hamburguesa con queso"] * cantidad
-            lista_pedido.append(resultado)
-            print(f"El subtotal hasta ahora es ${sum(lista_pedido)}")
-        elif propio_combo == 6:
-            resultado = productos["gaseosa"] * cantidad
-            print(f"El subtotal hasta ahora es ${sum(lista_pedido)}")
-        elif propio_combo == 7:
-            resultado = productos["postre"] * cantidad 
-            productos_vendidos.append(lista_productos[5])
-            print(f"El subtotal hasta ahora es ${sum(lista_pedido)}")
-        elif propio_combo == 8:
-            resultado = productos["aderezo"] * cantidad
-            productos_vendidos.append(lista_productos[6])
-            print(f"El subtotal hasta ahora es ${sum(lista_pedido)}")
-
-
-prod = int(max(lista_pedido))
-
-for clave, valor in productos.items(): #ITERO EN TODOS LOS ITEMAS DEL DICCIONARIO PARA ENCONTRAR EL VALOR MAXIMO
-    if valor == prod:
-        lista_productos.append(clave)
-
-print(f"El total a pagar es de ${sum(lista_pedido)}. El producto mas caro salio ${max(lista_pedido)} que corresponde a {set(lista_productos)}") #LO TRANSFORME EN SET ASI NO ME GUARDA VALORES REPETIDOS
+#productos = {"combo 1": 1500, "combo 2" : 1650, "hamburguesa sola": 1300, "hamburguesa con queso" : 1400, "gaseosa" : 700, "postre": 600, "aderezo" : 100}
+#lista_pedido = []
+#lista_productos = []
+#productos_vendidos = []
+#
+#ok = True
+#
+#
+#
+#
+#while ok:
+#   
+#
+#    pedido = int(input("""Eliga una de las siguientes opciones!:
+#1) Combo 1: Hamburguesa, papas fritas y gaseosa - 1550
+#2) Combo 2: Hamburguesa con queso, papas fritas y gaseosa - 1650
+#9) Terminar
+#3) Armar su propio combo: """))
+#    
+#    if pedido not in [1,2,3,4,5,6,7,8,9]:
+#        print("Numero de pedido invalido, por favor intente nuevamente")
+#        continue
+#    
+#
+#    if pedido == 1:
+#        lista_pedido.append(productos["combo 1"])
+#        print(f"El subtotal hasta ahora es ${sum(lista_pedido)}")
+#        
+#    elif pedido == 2:
+#        lista_pedido.append(productos["combo 2"])
+#        print(f"El subtotal hasta ahora es ${sum(lista_pedido)}")
+#
+#
+#    elif pedido == 9:
+#        ok = False
+#
+#    else:
+#        print("Usted ha decididor armar su propio combo")
+#        propio_combo = int(input("""
+#4) Hamburguesa sola - 1300
+#5) Hamburguesa con queso - 1400
+#6) Gaseosa - 700
+#7) Postre - 600
+#8) Agregar aderezo - 100
+#9) Terminar: """))
+#        cantidad = int(input("Ingrese la cantidad que desee: "))
+#
+#        if propio_combo == 4:
+#            resultado = productos["hamburguesa sola"] * cantidad
+#            lista_pedido.append(resultado)
+#            print(f"El subtotal hasta ahora es ${sum(lista_pedido)}")
+#        elif propio_combo == 5:
+#            resultado = productos["hamburguesa con queso"] * cantidad
+#            lista_pedido.append(resultado)
+#            print(f"El subtotal hasta ahora es ${sum(lista_pedido)}")
+#        elif propio_combo == 6:
+#            resultado = productos["gaseosa"] * cantidad
+#            print(f"El subtotal hasta ahora es ${sum(lista_pedido)}")
+#        elif propio_combo == 7:
+#            resultado = productos["postre"] * cantidad 
+#            productos_vendidos.append(lista_productos[5])
+#            print(f"El subtotal hasta ahora es ${sum(lista_pedido)}")
+#        elif propio_combo == 8:
+#            resultado = productos["aderezo"] * cantidad
+#            productos_vendidos.append(lista_productos[6])
+#            print(f"El subtotal hasta ahora es ${sum(lista_pedido)}")
+#
+#
+#prod = int(max(lista_pedido))
+#
+#for clave, valor in productos.items(): #ITERO EN TODOS LOS ITEMAS DEL DICCIONARIO PARA ENCONTRAR EL VALOR MAXIMO
+#    if valor == prod:
+#        lista_productos.append(clave)
+#
+#print(f"El total a pagar es de ${sum(lista_pedido)}. El producto mas caro salio ${max(lista_pedido)} que corresponde a {set(lista_productos)}") #LO TRANSFORME EN SET ASI NO ME GUARDA VALORES REPETIDOS
                   
 
 
@@ -1995,7 +1995,7 @@ print(f"El total a pagar es de ${sum(lista_pedido)}. El producto mas caro salio 
 
 
 
-        
+   
 
         
 
